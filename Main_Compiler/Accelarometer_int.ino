@@ -24,10 +24,10 @@ int Accelarometer()
     //Min state
     if (count == -1)
     {
-      count = 2;
+      count = 5;
     }
     //max state
-    if (count == 3)
+    if (count == 6)
     {
       count = 0;
     }

@@ -1,11 +1,7 @@
-#include <rgb_lcd.h>
-
-#include <Wire.h>
-
-
 void StopUr()
 {
-  trykNu= digitalRead(A1);
+  trykNu = digitalRead(6);
+  
 
 
   if (trykNu == true && trykFoer ==false)

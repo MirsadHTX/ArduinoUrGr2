@@ -34,6 +34,7 @@ bool urStop;
 
 void setup()
 {
+  accelmeter.init();
   // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
   //Setup for StopUr
@@ -49,20 +50,19 @@ void loop()
   // (note: line 1 is the second row, since counting begins with 0):
   lcd.setCursor(0, 0);
 
-  trykNu = digitalRead(6);
 
-/*
   //Viser UTC Dansk tid
-  if (state == 0)
+  if (state == 1)
   {
     lcd.clear();
     PrintTime();
   }
   //Funktion StopUr Begynder
-  if (state == 1)
+  if (state == 0)
   {
     lcd.clear();
     StopUr();
+    delay(10);
   }
 
   //Viser SensorValue på lcd
@@ -77,8 +77,5 @@ void loop()
     lcd.clear();
     studentName();
   }
-*/
-
-  lcd.setCursor(0,1);
-  lcd.print(state);
+  delay(50);
 }
