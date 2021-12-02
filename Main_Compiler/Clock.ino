@@ -2,11 +2,6 @@
 #include <rgb_lcd.h>
 #include <Wire.h>
 
-void Clock() 
-{
-  PrintTime();
-}
-
 void PrintTime()
 {
     clock.getTime();

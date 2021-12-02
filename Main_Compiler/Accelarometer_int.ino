@@ -1,6 +1,42 @@
 int Accelarometer()
 {
-  lcd.begin(16, 2);
+  accelmeter.getAcceleration(&x, &y, &z); // Tager memory address som input
+
+    //switches states 
+    if (x >= 1 && flag == false)
+    {
+      count += 1;
+      flag = true;
+    }
+
+    if (x <= -0.8 && flag == false)
+    {
+      count -=1;
+      flag = true;
+    }
+
+    // reset flag
+    if (x > -0.5 && x < 0.5)
+    {
+      flag = false;
+    }
+
+    //Min state
+    if (count == -1)
+    {
+      count = 2;
+    }
+    //max state
+    if (count == 3)
+    {
+      count = 0;
+    }
+  
+  delay(10);
+
+  return count;
+  
+  /*lcd.begin(16, 2);
   accelmeter.init();
 
   
@@ -36,5 +72,5 @@ int Accelarometer()
   
   delay(50);
 
-  return count;
+  return;*/
 }
