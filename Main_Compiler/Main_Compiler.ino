@@ -76,7 +76,7 @@ void loop()
     studentName();
   }
 
-//copy clicker game
+  //copy clicker game
   if(state == 4)
   {
     lcd.clear();
