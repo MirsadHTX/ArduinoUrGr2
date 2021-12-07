@@ -1,9 +1,11 @@
 void StopUr()
 {
+  lcd.setRGB(12, 235, 212);
+  
   pinMode(6,INPUT);
-  
   trykNu = digitalRead(6);
-  
+
+  //Et tryk 
   if (trykNu == true && trykFoer ==false)
   {
     if (urStop==false)

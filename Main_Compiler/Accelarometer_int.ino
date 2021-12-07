@@ -1,12 +1,18 @@
 int Accelarometer()
 {
-  accelmeter.getAcceleration(&x, &y, &z); // Tager memory address som input
+    accelmeter.getAcceleration(&x, &y, &z); // Tager memory address som input
+    pinMode(5, OUTPUT);
 
     //switches states 
     if (x >= 1 && flag == false)
     {
       count += 1;
       flag = true;
+      /*
+      digitalWrite(5, HIGH);
+      delay(100);
+      digitalWrite(5, LOW);
+      */
     }
 
     if (x <= -0.8 && flag == false)

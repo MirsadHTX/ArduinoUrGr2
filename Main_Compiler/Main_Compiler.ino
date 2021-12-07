@@ -10,8 +10,6 @@ int SensorValue;
 //Variabler til funktion "Accelarometer_int"
 float x, y, z;
 MMA7660 accelmeter;
-/*bool buttonPressed = false;
-  bool buttonBefore = false;*/
 bool flag;
 int count;
 
@@ -28,7 +26,7 @@ int options;
 unsigned long tidNu;
 unsigned long tidFoer;
 float countStopWatch;
-bool trykFoer = false;
+bool trykFoer;
 bool trykNu;
 bool urStop;
 
@@ -70,19 +68,12 @@ void loop()
     temperature();
     lcd.print(SensorValue);
   }
+
+  //Viser et tilfældigt navn fra klassen,når man trykker på knap
   if (state == 3)
   {
     lcd.clear();
     studentName();
-  }
-
-  //copy clicker game
-  if(state == 4)
-  {
-    lcd.clear();
-    ClickingGame();
-  }
-  
   }
 
 }
