@@ -28,7 +28,7 @@ int options;
 unsigned long tidNu;
 unsigned long tidFoer;
 float countStopWatch;
-bool trykFoer;
+bool trykFoer = false;
 bool trykNu;
 bool urStop;
 
@@ -39,7 +39,6 @@ void setup()
   lcd.begin(16, 2);
   //Setup for StopUr
   tidFoer = millis();
-  pinMode(6,INPUT);
 }
 
 void loop()
@@ -62,7 +61,6 @@ void loop()
   {
     lcd.clear();
     StopUr();
-    delay(10);
   }
 
   //Viser SensorValue på lcd
@@ -77,5 +75,5 @@ void loop()
     lcd.clear();
     studentName();
   }
-  delay(50);
+
 }

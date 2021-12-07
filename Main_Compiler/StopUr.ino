@@ -1,9 +1,9 @@
 void StopUr()
 {
+  pinMode(6,INPUT);
+  
   trykNu = digitalRead(6);
   
-
-
   if (trykNu == true && trykFoer ==false)
   {
     if (urStop==false)
@@ -26,8 +26,11 @@ void StopUr()
   {
     tidNu = millis();
 
-    count = tidNu-tidFoer;
+    countStopWatch = tidNu-tidFoer;
   }
 
   trykFoer=trykNu;
+
+  lcd.setCursor(0,0);
+  lcd.print(countStopWatch/1000);
 }

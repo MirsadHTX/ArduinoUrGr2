@@ -1,7 +1,12 @@
 void studentName() 
 {
-  randomName = random(1, 24);
-  delay(100);
+  lcd.print("Tryk på knappen for navn");
+  if(digitalRead(6) == true)
+  {
+    randomName = random(1, 24);
+    delay(100);
+  }
+  
 
   if(randomName == 0)
   {
